@@ -1,36 +1,40 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { Search, Bell, MapPin, Calendar, Heart } from 'lucide-react';
-import BottomNav from '@/components/BottomNav';
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { Search, Bell, MapPin, Calendar, Heart } from "lucide-react";
+import BottomNav from "@/components/BottomNav";
 
 const events = [
   {
     id: 1,
-    title: '1° Bike Fest Recife',
-    description: 'Uma manhã para pedalar pelas ruas da cidade praticando esporte e lazer...',
-    location: 'Boa Viagem - PE',
-    date: '14/09/2025',
-    image: 'https://images.unsplash.com/photo-1541625602330-2277a4c46182?w=400&h=240&fit=crop',
+    title: "1° Bike Fest Recife",
+    description:
+      "Uma manhã para pedalar pelas ruas da cidade praticando esporte e lazer...",
+    location: "Boa Viagem - PE",
+    date: "14/09/2025",
+    image:
+      "https://images.unsplash.com/photo-1541625602330-2277a4c46182?w=400&h=240&fit=crop",
     liked: true,
   },
   {
     id: 2,
-    title: 'Circuito SESC 2026',
-    description: 'Uma manhã para pedalar pelas ruas da cidade praticando esporte e lazer...',
-    location: 'Marco Zero - PE',
-    date: '26/11/2025',
-    image: 'https://images.unsplash.com/photo-1517649763962-0c623066013b?w=400&h=240&fit=crop',
+    title: "Circuito SESC 2026",
+    description:
+      "Uma manhã para pedalar pelas ruas da cidade praticando esporte e lazer...",
+    location: "Marco Zero - PE",
+    date: "26/11/2025",
+    image:
+      "https://images.unsplash.com/photo-1517649763962-0c623066013b?w=400&h=240&fit=crop",
     liked: false,
   },
 ];
 
-const categories = ['Todos', 'Corrida', 'Ciclismo', 'Funcional'];
-const distances = ['Livre', 'até 2km', 'até 5km', 'até 10km'];
+const categories = ["Todos", "Corrida", "Ciclismo", "Funcional"];
+const distances = ["Livre", "até 2km", "até 5km", "até 10km"];
 
 export default function Home() {
-  const [selectedCategory, setSelectedCategory] = useState('Todos');
-  const [selectedDistance, setSelectedDistance] = useState('até 2km');
-  const [searchQuery, setSearchQuery] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState("Todos");
+  const [selectedDistance, setSelectedDistance] = useState("até 2km");
+  const [searchQuery, setSearchQuery] = useState("");
 
   return (
     <div className="min-h-screen bg-white pb-24">
@@ -45,7 +49,9 @@ export default function Home() {
         </div>
 
         <h1 className="text-2xl font-bold mb-1">Olá, Maria Eduarda</h1>
-        <p className="text-sm text-gray-500 mb-6">Confira os eventos e atividades próximas</p>
+        <p className="text-sm text-gray-500 mb-6">
+          Confira os eventos e atividades próximas
+        </p>
 
         {/* Search Bar */}
         <div className="relative mb-6">
@@ -56,7 +62,10 @@ export default function Home() {
             onChange={(e) => setSearchQuery(e.target.value)}
             className="w-full h-[60px] pl-4 pr-12 text-lg border-2 border-black/25 rounded-lg focus:border-cony-green focus:outline-none"
           />
-          <Search className="absolute right-4 top-1/2 -translate-y-1/2 text-cony-green" size={24} />
+          <Search
+            className="absolute right-4 top-1/2 -translate-y-1/2 text-cony-green"
+            size={24}
+          />
         </div>
 
         {/* Categories */}
@@ -69,8 +78,8 @@ export default function Home() {
                 onClick={() => setSelectedCategory(cat)}
                 className={`px-4 py-2 rounded-lg text-sm font-medium whitespace-nowrap shadow-sm transition-all ${
                   selectedCategory === cat
-                    ? 'bg-gradient-to-b from-cony-yellow to-cony-green-light text-black font-bold'
-                    : 'bg-white text-black/50 border border-gray-200'
+                    ? "bg-gradient-to-b from-cony-yellow to-cony-green-light text-black font-bold"
+                    : "bg-white text-black/50 border border-gray-200"
                 }`}
               >
                 {cat}
@@ -89,8 +98,8 @@ export default function Home() {
                 onClick={() => setSelectedDistance(dist)}
                 className={`px-4 py-2 rounded-lg text-sm font-medium whitespace-nowrap shadow-sm transition-all ${
                   selectedDistance === dist
-                    ? 'bg-gradient-to-b from-cony-yellow to-cony-green-light text-black font-bold'
-                    : 'bg-white text-black/50 border border-gray-200'
+                    ? "bg-gradient-to-b from-cony-yellow to-cony-green-light text-black font-bold"
+                    : "bg-white text-black/50 border border-gray-200"
                 }`}
               >
                 {dist}
@@ -103,16 +112,23 @@ export default function Home() {
       {/* Events List */}
       <div className="px-6 space-y-6 pb-6">
         {events.map((event) => (
-          <div key={event.id} className="bg-white rounded-[30px] shadow-sm border border-black/5 p-4 relative">
-            <h3 className="text-xl font-semibold mb-4 text-center">{event.title}</h3>
-            
+          <div
+            key={event.id}
+            className="bg-white rounded-[30px] shadow-sm border border-black/5 p-4 relative"
+          >
+            <h3 className="text-xl font-semibold mb-4 text-center">
+              {event.title}
+            </h3>
+
             <img
               src={event.image}
               alt={event.title}
               className="w-full h-[180px] object-cover rounded-lg mb-4"
             />
 
-            <p className="text-center text-black/50 text-sm mb-4 px-4">{event.description}</p>
+            <p className="text-center text-black/50 text-sm mb-4 px-4">
+              {event.description}
+            </p>
 
             <div className="flex items-center justify-center gap-8 mb-4 text-sm font-medium">
               <div className="flex items-center gap-2 text-cony-green">
@@ -135,11 +151,13 @@ export default function Home() {
               <button
                 className={`w-[42px] h-[42px] rounded-full flex items-center justify-center transition-colors ${
                   event.liked
-                    ? 'bg-cony-green border-2 border-cony-green'
-                    : 'bg-white border-2 border-cony-green'
+                    ? "bg-cony-green border-2 border-cony-green"
+                    : "bg-white border-2 border-cony-green"
                 }`}
               >
-                <Heart className={`w-5 h-5 ${event.liked ? 'fill-white text-white' : 'text-cony-green'}`} />
+                <Heart
+                  className={`w-5 h-5 ${event.liked ? "fill-white text-white" : "text-cony-green"}`}
+                />
               </button>
             </div>
           </div>

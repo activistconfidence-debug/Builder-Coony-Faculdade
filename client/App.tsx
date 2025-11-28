@@ -34,7 +34,14 @@ const App = () => (
           <Route path="/profile-setup" element={<Profile />} />
           <Route path="/settings" element={<Settings />} />
           <Route path="/activities" element={<Home />} />
-          <Route path="/chat" element={<div className="min-h-screen flex items-center justify-center bg-white pb-24"><p className="text-gray-500">Chat em desenvolvimento</p></div>} />
+          <Route
+            path="/chat"
+            element={
+              <div className="min-h-screen flex items-center justify-center bg-white pb-24">
+                <p className="text-gray-500">Chat em desenvolvimento</p>
+              </div>
+            }
+          />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

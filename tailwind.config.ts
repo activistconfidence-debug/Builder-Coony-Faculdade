@@ -48,12 +48,18 @@ export default {
           foreground: "hsl(var(--card-foreground))",
         },
         // CONY brand colors
-        'cony-green': '#00B546',
-        'cony-green-light': '#8FE50D',
-        'cony-yellow': '#CDFF21',
+        "cony-green": "#00B546",
+        "cony-green-light": "#8FE50D",
+        "cony-yellow": "#CDFF21",
       },
       fontFamily: {
-        sans: ['Roboto', 'Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+        sans: [
+          "Roboto",
+          "Inter",
+          "-apple-system",
+          "BlinkMacSystemFont",
+          "sans-serif",
+        ],
       },
       borderRadius: {
         lg: "var(--radius)",

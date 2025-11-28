@@ -1,23 +1,26 @@
-import { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { ArrowLeft, Eye, EyeOff, User, Phone, Mail, Lock } from 'lucide-react';
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { ArrowLeft, Eye, EyeOff, User, Phone, Mail, Lock } from "lucide-react";
 
 export default function Register() {
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [formData, setFormData] = useState({
-    name: '',
-    phone: '',
-    email: '',
-    password: '',
-    confirmPassword: '',
+    name: "",
+    phone: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
   });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (formData.password === formData.confirmPassword && formData.password.length >= 6) {
-      navigate('/profile-setup');
+    if (
+      formData.password === formData.confirmPassword &&
+      formData.password.length >= 6
+    ) {
+      navigate("/profile-setup");
     }
   };
 
@@ -42,11 +45,16 @@ export default function Register() {
                 type="text"
                 placeholder="Seu nome"
                 value={formData.name}
-                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                onChange={(e) =>
+                  setFormData({ ...formData, name: e.target.value })
+                }
                 className="w-full h-[60px] px-4 pr-12 text-lg border-2 border-black/25 rounded-lg focus:border-cony-green focus:outline-none"
                 required
               />
-              <User className="absolute right-4 top-1/2 -translate-y-1/2 text-black/25" size={20} />
+              <User
+                className="absolute right-4 top-1/2 -translate-y-1/2 text-black/25"
+                size={20}
+              />
             </div>
           </div>
 
@@ -57,11 +65,16 @@ export default function Register() {
                 type="tel"
                 placeholder="(**) 00000-0000"
                 value={formData.phone}
-                onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                onChange={(e) =>
+                  setFormData({ ...formData, phone: e.target.value })
+                }
                 className="w-full h-[60px] px-4 pr-12 text-lg border-2 border-black/25 rounded-lg focus:border-cony-green focus:outline-none"
                 required
               />
-              <Phone className="absolute right-4 top-1/2 -translate-y-1/2 text-black/25" size={20} />
+              <Phone
+                className="absolute right-4 top-1/2 -translate-y-1/2 text-black/25"
+                size={20}
+              />
             </div>
           </div>
 
@@ -72,11 +85,16 @@ export default function Register() {
                 type="email"
                 placeholder="voce@email.com"
                 value={formData.email}
-                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                onChange={(e) =>
+                  setFormData({ ...formData, email: e.target.value })
+                }
                 className="w-full h-[60px] px-4 pr-12 text-lg border-2 border-black/25 rounded-lg focus:border-cony-green focus:outline-none"
                 required
               />
-              <Mail className="absolute right-4 top-1/2 -translate-y-1/2 text-black/25" size={20} />
+              <Mail
+                className="absolute right-4 top-1/2 -translate-y-1/2 text-black/25"
+                size={20}
+              />
             </div>
           </div>
 
@@ -84,10 +102,12 @@ export default function Register() {
             <label className="block text-lg font-medium mb-2">Senha</label>
             <div className="relative">
               <input
-                type={showPassword ? 'text' : 'password'}
+                type={showPassword ? "text" : "password"}
                 placeholder="Mín. 6 caracteres"
                 value={formData.password}
-                onChange={(e) => setFormData({ ...formData, password: e.target.value })}
+                onChange={(e) =>
+                  setFormData({ ...formData, password: e.target.value })
+                }
                 className="w-full h-[60px] px-4 pr-12 text-lg border-2 border-cony-green rounded-lg focus:border-cony-green focus:outline-none"
                 required
                 minLength={6}
@@ -103,13 +123,17 @@ export default function Register() {
           </div>
 
           <div>
-            <label className="block text-lg font-medium mb-2">Confirmar senha</label>
+            <label className="block text-lg font-medium mb-2">
+              Confirmar senha
+            </label>
             <div className="relative">
               <input
-                type={showConfirmPassword ? 'text' : 'password'}
+                type={showConfirmPassword ? "text" : "password"}
                 placeholder="Repita a senha"
                 value={formData.confirmPassword}
-                onChange={(e) => setFormData({ ...formData, confirmPassword: e.target.value })}
+                onChange={(e) =>
+                  setFormData({ ...formData, confirmPassword: e.target.value })
+                }
                 className="w-full h-[60px] px-4 pr-12 text-lg border-2 border-cony-green rounded-lg focus:border-cony-green focus:outline-none"
                 required
               />

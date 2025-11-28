@@ -1,14 +1,14 @@
-import { Home, MessageCircle, User, Activity } from 'lucide-react';
-import { Link, useLocation } from 'react-router-dom';
+import { Home, MessageCircle, User, Activity } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 
 export default function BottomNav() {
   const location = useLocation();
 
   const navItems = [
-    { path: '/home', icon: Home, label: 'Início' },
-    { path: '/activities', icon: Activity, label: 'Atividades' },
-    { path: '/chat', icon: MessageCircle, label: 'Chat' },
-    { path: '/profile', icon: User, label: 'Perfil' },
+    { path: "/home", icon: Home, label: "Início" },
+    { path: "/activities", icon: Activity, label: "Atividades" },
+    { path: "/chat", icon: MessageCircle, label: "Chat" },
+    { path: "/profile", icon: User, label: "Perfil" },
   ];
 
   return (
@@ -22,13 +22,15 @@ export default function BottomNav() {
               key={item.path}
               to={item.path}
               className={`flex flex-col items-center justify-center flex-1 h-full relative ${
-                isActive ? 'text-black' : 'text-gray-500'
+                isActive ? "text-black" : "text-gray-500"
               }`}
             >
               {isActive && (
                 <div className="absolute top-0 left-0 right-0 h-12 bg-cony-yellow/30 rounded-b-xl" />
               )}
-              <Icon className={`w-6 h-6 relative z-10 ${isActive ? 'fill-black' : ''}`} />
+              <Icon
+                className={`w-6 h-6 relative z-10 ${isActive ? "fill-black" : ""}`}
+              />
             </Link>
           );
         })}

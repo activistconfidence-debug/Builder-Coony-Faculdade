@@ -1,10 +1,10 @@
-import { Link } from 'react-router-dom';
-import { ArrowLeft, MapPin, Plus, Edit2 } from 'lucide-react';
-import BottomNav from '@/components/BottomNav';
+import { Link } from "react-router-dom";
+import { ArrowLeft, MapPin, Plus, Edit2 } from "lucide-react";
+import BottomNav from "@/components/BottomNav";
 
 const sports = [
-  { icon: '👟', name: 'Corrida', selected: true },
-  { icon: '🚴', name: 'Ciclismo', selected: true },
+  { icon: "👟", name: "Corrida", selected: true },
+  { icon: "🚴", name: "Ciclismo", selected: true },
 ];
 
 export default function Profile() {
@@ -18,14 +18,24 @@ export default function Profile() {
       </div>
 
       <div className="px-6">
-        <h1 className="text-2xl font-bold text-center mb-8">Personalizar Perfil</h1>
+        <h1 className="text-2xl font-bold text-center mb-8">
+          Personalizar Perfil
+        </h1>
 
         {/* Profile Picture */}
         <div className="flex justify-center mb-8">
           <div className="relative">
             <div className="w-24 h-24 rounded-full bg-gray-200 flex items-center justify-center border-4 border-cony-green">
-              <svg className="w-12 h-12 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
+              <svg
+                className="w-12 h-12 text-gray-400"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+                  clipRule="evenodd"
+                />
               </svg>
             </div>
             <button className="absolute bottom-0 right-0 w-8 h-8 bg-cony-green rounded-full flex items-center justify-center text-white shadow-lg">
@@ -57,7 +67,9 @@ export default function Profile() {
           </div>
 
           <div>
-            <label className="block text-lg font-medium mb-2">Localização</label>
+            <label className="block text-lg font-medium mb-2">
+              Localização
+            </label>
             <div className="flex gap-2">
               <input
                 type="text"
@@ -71,15 +83,17 @@ export default function Profile() {
           </div>
 
           <div>
-            <label className="block text-lg font-medium mb-2">Modalidades</label>
+            <label className="block text-lg font-medium mb-2">
+              Modalidades
+            </label>
             <div className="flex gap-3">
               {sports.map((sport, index) => (
                 <button
                   key={index}
                   className={`w-12 h-12 rounded-lg border-2 flex items-center justify-center text-2xl ${
                     sport.selected
-                      ? 'bg-cony-yellow border-cony-green'
-                      : 'bg-white border-black/25'
+                      ? "bg-cony-yellow border-cony-green"
+                      : "bg-white border-black/25"
                   }`}
                 >
                   {sport.icon}
