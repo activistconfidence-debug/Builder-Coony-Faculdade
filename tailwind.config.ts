@@ -47,16 +47,13 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        sidebar: {
-          DEFAULT: "hsl(var(--sidebar-background))",
-          foreground: "hsl(var(--sidebar-foreground))",
-          primary: "hsl(var(--sidebar-primary))",
-          "primary-foreground": "hsl(var(--sidebar-primary-foreground))",
-          accent: "hsl(var(--sidebar-accent))",
-          "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
-          border: "hsl(var(--sidebar-border))",
-          ring: "hsl(var(--sidebar-ring))",
-        },
+        // CONY brand colors
+        'cony-green': '#00B546',
+        'cony-green-light': '#8FE50D',
+        'cony-yellow': '#CDFF21',
+      },
+      fontFamily: {
+        sans: ['Roboto', 'Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
       },
       borderRadius: {
         lg: "var(--radius)",
